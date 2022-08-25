@@ -15,22 +15,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // To hide the Indicator at lunch
         activityIndicator.hidesWhenStopped = true
-        // Do any additional setup after loading the view.
-        let file = "tedTalks"
         self.activityIndicator.startAnimating()
-        Parser().parse(file) { result in
-            switch result {
-            case .success(let data):
-                self.data = data
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self.activityIndicator.stopAnimating()
-            }
+        DataManager().getTalks() { talks in
+            self.data = talks
+            self.activityIndicator.stopAnimating()
         }
     }
 }
-
