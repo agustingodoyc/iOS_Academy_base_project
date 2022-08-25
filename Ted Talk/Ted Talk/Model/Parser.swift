@@ -17,17 +17,17 @@ public class Parser {
     
     func parse(_ file: String, completionHandler: @escaping (Result<[TedTalk], ParseError>) -> Void){
         DispatchQueue.global(qos: .background).async {
-            if let fileLocation = Bundle.main.url(forResource: file, withExtension: "json") {
-                do {
-                    let data = try Data(contentsOf: fileLocation)
-                    let jsonDecoder = JSONDecoder()
-                    let dataFromJson = try jsonDecoder.decode([TedTalk].self, from: data)
-                    completionHandler(.success(dataFromJson))
-                } catch {
-                    completionHandler(.failure(.decodeError))
-                }
-            } else {
+            guard let fileLocation = Bundle.main.url(forResource: file, withExtension: "json") else {
                 completionHandler(.failure(.fileNotFound))
+                return
+            }
+            do {
+                let data = try Data(contentsOf: fileLocation)
+                let jsonDecoder = JSONDecoder()
+                let dataFromJson = try jsonDecoder.decode([TedTalk].self, from: data)
+                completionHandler(.success(dataFromJson))
+            } catch {
+                completionHandler(.failure(.decodeError))
             }
         }
     }
