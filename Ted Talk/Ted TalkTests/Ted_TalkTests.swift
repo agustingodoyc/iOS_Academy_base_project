@@ -23,26 +23,39 @@ class Ted_TalkTests: XCTestCase {
     }
 
     func testParse() {
-        var guess: Int = 0
-        
-        let expectation = self.expectation(description: "Scaling")
-        var talks: TedTalk?
+        let promise = self.expectation(description: "Scaling")
+        var talks: [TedTalk]?
 
         sut.parse("test") { result in
             switch result {
             case .success(let aux):
-                talks = aux[0]
-                guess = talks!.comments
+                talks = aux
             case .failure(_):
-                guess = 4553
+                XCTFail()
             }
             
-            expectation.fulfill()
+            promise.fulfill()
         }
         
         waitForExpectations(timeout: 5, handler: nil)
         
-        XCTAssertEqual(guess, 4553, "Score computed from guess is wrong")
+        XCTAssertEqual(talks![0].comments, 4553, "Score computed from guess is wrong")
+        XCTAssertEqual(talks![0].tags[0], "children", "Score computed from guess is wrong")
+        XCTAssertEqual(talks!.count, 1, "Score computed from guess is wrong")
     }
 
+    func  testParseToFail() {
+        let promise = self.expectation(description: "Scaling")
+
+        sut.parse("xxxx") { result in
+            switch result {
+            case .success(_):
+                XCTFail()
+            case .failure(_):
+                promise.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
 }
