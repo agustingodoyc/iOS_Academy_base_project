@@ -19,7 +19,9 @@ class ViewController: UIViewController {
         self.activityIndicator.startAnimating()
         DataManager().getTalks() { talks in
             self.data = talks
-            self.activityIndicator.stopAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
 }

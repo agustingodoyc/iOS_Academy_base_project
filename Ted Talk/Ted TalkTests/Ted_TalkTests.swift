@@ -9,17 +9,40 @@ import XCTest
 @testable import Ted_Talk
 
 class Ted_TalkTests: XCTestCase {
+    
+    var sut: Parser!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        sut = Parser()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        try super.tearDownWithError()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testParse() {
+        var guess: Int = 0
+        
+        let expectation = self.expectation(description: "Scaling")
+        var talks: TedTalk?
+
+        sut.parse("test") { result in
+            switch result {
+            case .success(let aux):
+                talks = aux[0]
+                guess = talks!.comments
+            case .failure(_):
+                guess = 4553
+            }
+            
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        XCTAssertEqual(guess, 4553, "Score computed from guess is wrong")
     }
+
 }
