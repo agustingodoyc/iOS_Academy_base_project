@@ -12,7 +12,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ted_Talk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -21,23 +20,86 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sJR-BU-L14">
                                 <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V2G-8S-0QH">
+                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tedTalkCell" id="BDz-Ki-ciI" userLabel="TedTalkCell" customClass="TedTalkCell" customModule="Ted_Talk" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="112"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BDz-Ki-ciI" id="hRk-K9-tjC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tedImage" translatesAutoresizingMaskIntoConstraints="NO" id="ZRJ-0y-KgN" userLabel="TedImage">
+                                                    <rect key="frame" x="10" y="10" width="165.5" height="92"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ZRJ-0y-KgN" secondAttribute="height" multiplier="1600:885" id="Bau-t9-HXi"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVE-FI-Mwv">
+                                                    <rect key="frame" x="180.5" y="30.5" width="208.5" height="65.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Main Speaker" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUb-yR-ZEH" userLabel="Name">
+                                                    <rect key="frame" x="183.5" y="11" width="220.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZRJ-0y-KgN" firstAttribute="top" secondItem="hRk-K9-tjC" secondAttribute="top" constant="10" id="2yU-05-N7D"/>
+                                                <constraint firstItem="DVE-FI-Mwv" firstAttribute="trailing" secondItem="hRk-K9-tjC" secondAttribute="trailingMargin" constant="-5" id="6HT-0C-qzJ"/>
+                                                <constraint firstItem="ZRJ-0y-KgN" firstAttribute="leading" secondItem="hRk-K9-tjC" secondAttribute="leading" constant="10" id="CFs-Ox-oEq"/>
+                                                <constraint firstItem="ZRJ-0y-KgN" firstAttribute="width" secondItem="hRk-K9-tjC" secondAttribute="width" multiplier="0.4" id="Cfv-6s-Y2b"/>
+                                                <constraint firstItem="NUb-yR-ZEH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZRJ-0y-KgN" secondAttribute="trailing" constant="8" symbolic="YES" id="D8F-0h-eYe"/>
+                                                <constraint firstItem="DVE-FI-Mwv" firstAttribute="bottom" secondItem="hRk-K9-tjC" secondAttribute="bottomMargin" constant="-5" id="Dyb-0X-l8J"/>
+                                                <constraint firstItem="DVE-FI-Mwv" firstAttribute="top" secondItem="NUb-yR-ZEH" secondAttribute="bottom" constant="5" id="GDe-cI-uZB"/>
+                                                <constraint firstItem="DVE-FI-Mwv" firstAttribute="leading" secondItem="ZRJ-0y-KgN" secondAttribute="trailing" constant="5" id="GSt-hZ-uTk"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZRJ-0y-KgN" secondAttribute="bottom" constant="10" id="RUH-6U-CpE"/>
+                                                <constraint firstItem="NUb-yR-ZEH" firstAttribute="top" secondItem="hRk-K9-tjC" secondAttribute="topMargin" id="YFZ-Sy-cIG"/>
+                                                <constraint firstItem="NUb-yR-ZEH" firstAttribute="leading" secondItem="ZRJ-0y-KgN" secondAttribute="trailing" constant="8" symbolic="YES" id="bFn-vg-GBB"/>
+                                                <constraint firstAttribute="trailing" secondItem="NUb-yR-ZEH" secondAttribute="trailing" constant="10" id="iVO-fo-U7k"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="desc" destination="DVE-FI-Mwv" id="hgC-eL-C2u"/>
+                                            <outlet property="name" destination="NUb-yR-ZEH" id="JeU-Ff-6sd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="5Io-Hs-isJ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fgN-Xi-rsN"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="V2G-8S-0QH" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="BAj-d1-FuX"/>
+                            <constraint firstItem="V2G-8S-0QH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BhO-ye-vR7"/>
                             <constraint firstItem="sJR-BU-L14" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="IId-hO-Ls7"/>
+                            <constraint firstItem="V2G-8S-0QH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cty-fd-5xm"/>
                             <constraint firstItem="sJR-BU-L14" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eXm-2P-MAc"/>
+                            <constraint firstItem="V2G-8S-0QH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kxP-wS-15f"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="sJR-BU-L14" id="Dvz-h2-E36"/>
+                        <outlet property="tableView" destination="V2G-8S-0QH" id="XxW-CJ-Z4R"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="85"/>
+            <point key="canvasLocation" x="121.73913043478262" y="84.375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="tedImage" width="1600" height="885"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
