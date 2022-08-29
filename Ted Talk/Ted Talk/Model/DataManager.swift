@@ -11,8 +11,8 @@ public class DataManager {
     
     private var file: String
     
-    init (file: String? = "tedTalks") {
-        self.file = file!
+    init (file: String = "tedTalks") {
+        self.file = file
     }
     
     func getTalks(completionHandler: @escaping ([TedTalk]) -> Void){
