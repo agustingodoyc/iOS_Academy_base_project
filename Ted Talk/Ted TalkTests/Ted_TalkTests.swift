@@ -9,17 +9,53 @@ import XCTest
 @testable import Ted_Talk
 
 class Ted_TalkTests: XCTestCase {
+    
+    var sut: Parser!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        sut = Parser()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
+        try super.tearDownWithError()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testParse() {
+        let promise = self.expectation(description: "Scaling")
+        var talks: [TedTalk]?
+
+        sut.parse("test") { result in
+            switch result {
+            case .success(let aux):
+                talks = aux
+            case .failure(_):
+                XCTFail()
+            }
+            
+            promise.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        XCTAssertEqual(talks![0].comments, 4553, "Score computed from guess is wrong")
+        XCTAssertEqual(talks![0].tags[0], "children", "Score computed from guess is wrong")
+        XCTAssertEqual(talks!.count, 1, "Score computed from guess is wrong")
+    }
+
+    func  testParseToFail() {
+        let promise = self.expectation(description: "Scaling")
+
+        sut.parse("xxxx") { result in
+            switch result {
+            case .success(_):
+                XCTFail()
+            case .failure(_):
+                promise.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
     }
 }
