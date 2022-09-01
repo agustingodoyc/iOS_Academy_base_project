@@ -76,20 +76,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="fgN-Xi-rsN"/>
                                 </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="f7e-X7-o76">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SyC-Rw-LBJ">
+                                <rect key="frame" x="0.0" y="95" width="414" height="216"/>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f7e-X7-o76" secondAttribute="trailing" id="6lu-iG-MsQ"/>
                             <constraint firstItem="V2G-8S-0QH" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="BAj-d1-FuX"/>
                             <constraint firstItem="V2G-8S-0QH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BhO-ye-vR7"/>
+                            <constraint firstItem="f7e-X7-o76" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GAp-NV-Faq"/>
                             <constraint firstItem="sJR-BU-L14" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="IId-hO-Ls7"/>
+                            <constraint firstItem="SyC-Rw-LBJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Pjy-2I-jKL"/>
                             <constraint firstItem="V2G-8S-0QH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cty-fd-5xm"/>
+                            <constraint firstItem="f7e-X7-o76" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dtP-cO-gQq"/>
                             <constraint firstItem="sJR-BU-L14" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eXm-2P-MAc"/>
+                            <constraint firstItem="SyC-Rw-LBJ" firstAttribute="top" secondItem="f7e-X7-o76" secondAttribute="bottom" id="hAd-SV-PZv"/>
+                            <constraint firstItem="SyC-Rw-LBJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iBk-Sb-8xD"/>
                             <constraint firstItem="V2G-8S-0QH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kxP-wS-15f"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="sJR-BU-L14" id="Dvz-h2-E36"/>
+                        <outlet property="picker" destination="SyC-Rw-LBJ" id="T9W-cL-4ab"/>
+                        <outlet property="searchBar" destination="f7e-X7-o76" id="T6X-8a-0Cv"/>
                         <outlet property="tableView" destination="V2G-8S-0QH" id="XxW-CJ-Z4R"/>
                     </connections>
                 </viewController>
