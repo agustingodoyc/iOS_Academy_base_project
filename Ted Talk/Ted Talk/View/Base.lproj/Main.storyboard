@@ -21,7 +21,7 @@
                                 <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="V2G-8S-0QH">
-                                <rect key="frame" x="0.0" y="453" width="414" height="409"/>
+                                <rect key="frame" x="0.0" y="311" width="414" height="551"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tedTalkCell" id="BDz-Ki-ciI" userLabel="TedTalkCell" customClass="TedTalkCell" customModule="Ted_Talk" customModuleProvider="target">
@@ -88,8 +88,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f7e-X7-o76" secondAttribute="trailing" id="6lu-iG-MsQ"/>
-                            <constraint firstItem="V2G-8S-0QH" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="BAj-d1-FuX"/>
                             <constraint firstItem="V2G-8S-0QH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BhO-ye-vR7"/>
+                            <constraint firstItem="V2G-8S-0QH" firstAttribute="top" secondItem="SyC-Rw-LBJ" secondAttribute="bottom" id="BiC-q2-mRd"/>
                             <constraint firstItem="f7e-X7-o76" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GAp-NV-Faq"/>
                             <constraint firstItem="sJR-BU-L14" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="IId-hO-Ls7"/>
                             <constraint firstItem="SyC-Rw-LBJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Pjy-2I-jKL"/>

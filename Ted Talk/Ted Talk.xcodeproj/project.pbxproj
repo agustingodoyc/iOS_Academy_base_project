@@ -13,13 +13,14 @@
 		B3F949C3266A727C00D626BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F949C1266A727C00D626BB /* Main.storyboard */; };
 		B3F949C5266A728000D626BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3F949C4266A728000D626BB /* Assets.xcassets */; };
 		B3F949C8266A728000D626BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F949C6266A728000D626BB /* LaunchScreen.storyboard */; };
-		B3F949D3266A728000D626BB /* Ted_TalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949D2266A728000D626BB /* Ted_TalkTests.swift */; };
 		B3F949DE266A728000D626BB /* Ted_TalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949DD266A728000D626BB /* Ted_TalkUITests.swift */; };
 		B3F949ED266A729400D626BB /* tedTalks.json in Resources */ = {isa = PBXBuildFile; fileRef = B3F949EC266A729400D626BB /* tedTalks.json */; };
 		D62270A828B4244F00DF7BB7 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62270A728B4244F00DF7BB7 /* Parser.swift */; };
 		D62270AA28B4253B00DF7BB7 /* TedTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62270A928B4253B00DF7BB7 /* TedTalk.swift */; };
 		D6368D0C28B7F69500369572 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6368D0B28B7F69500369572 /* DataManager.swift */; };
 		D6368D0E28B8097500369572 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = D6368D0D28B8097500369572 /* test.json */; };
+		D67A116628C296C900296512 /* Parse_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A116528C296C900296512 /* Parse_Test.swift */; };
+		D67A116E28C29A8500296512 /* DataManager_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A116D28C29A8500296512 /* DataManager_Test.swift */; };
 		D6DC5ED428BD4EE700ED9DC5 /* TedTalkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC5ED328BD4EE700ED9DC5 /* TedTalkCell.swift */; };
 		D6DC5ED628BD56CD00ED9DC5 /* TedTalkCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC5ED528BD56CD00ED9DC5 /* TedTalkCellModel.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +52,6 @@
 		B3F949C7266A728000D626BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3F949C9266A728000D626BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F949CE266A728000D626BB /* Ted TalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ted TalkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3F949D2266A728000D626BB /* Ted_TalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ted_TalkTests.swift; sourceTree = "<group>"; };
 		B3F949D4266A728000D626BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F949D9266A728000D626BB /* Ted TalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ted TalkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F949DD266A728000D626BB /* Ted_TalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ted_TalkUITests.swift; sourceTree = "<group>"; };
@@ -61,6 +61,8 @@
 		D62270A928B4253B00DF7BB7 /* TedTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalk.swift; sourceTree = "<group>"; };
 		D6368D0B28B7F69500369572 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D6368D0D28B8097500369572 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		D67A116528C296C900296512 /* Parse_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse_Test.swift; sourceTree = "<group>"; };
+		D67A116D28C29A8500296512 /* DataManager_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager_Test.swift; sourceTree = "<group>"; };
 		D6DC5ED328BD4EE700ED9DC5 /* TedTalkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkCell.swift; sourceTree = "<group>"; };
 		D6DC5ED528BD56CD00ED9DC5 /* TedTalkCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,8 +130,9 @@
 		B3F949D1266A728000D626BB /* Ted TalkTests */ = {
 			isa = PBXGroup;
 			children = (
-				B3F949D2266A728000D626BB /* Ted_TalkTests.swift */,
 				B3F949D4266A728000D626BB /* Info.plist */,
+				D67A116528C296C900296512 /* Parse_Test.swift */,
+				D67A116D28C29A8500296512 /* DataManager_Test.swift */,
 			);
 			path = "Ted TalkTests";
 			sourceTree = "<group>";
@@ -328,7 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3F949D3266A728000D626BB /* Ted_TalkTests.swift in Sources */,
+				D67A116628C296C900296512 /* Parse_Test.swift in Sources */,
+				D67A116E28C29A8500296512 /* DataManager_Test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
