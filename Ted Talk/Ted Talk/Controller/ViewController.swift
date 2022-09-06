@@ -113,3 +113,16 @@ extension ViewController: UISearchBarDelegate {
         data = dataManager.serchWord(searchText: searchText, picker: filters[picker.selectedRow(inComponent: 0)])
     }
 }
+
+// MARK: - Detail View
+
+extension ViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        if segue.identifier == "detail", let destination = segue.destination as? DetailViewController {
+            destination.talk = .init(talk: data[selectedPath.row])
+        }
+    }
+}
