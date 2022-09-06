@@ -122,8 +122,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zct-2h-9Qe">
-                                <rect key="frame" x="178" y="98" width="58" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zct-2h-9Qe">
+                                <rect key="frame" x="178.5" y="98" width="57.5" height="37"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -182,7 +182,9 @@
                             <constraint firstItem="D3j-Fd-F8T" firstAttribute="trailing" secondItem="sFP-2w-a4o" secondAttribute="trailing" constant="10" id="PYy-hx-hA7"/>
                             <constraint firstItem="Scy-m4-H2E" firstAttribute="top" secondItem="rqZ-Wa-bYJ" secondAttribute="bottom" constant="10" id="Qna-Dl-Yes"/>
                             <constraint firstItem="Zct-2h-9Qe" firstAttribute="centerX" secondItem="fC2-Fr-lxi" secondAttribute="centerX" id="UEI-WT-EnV"/>
+                            <constraint firstItem="Zct-2h-9Qe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D3j-Fd-F8T" secondAttribute="leading" constant="10" id="UOC-O0-ZnC"/>
                             <constraint firstItem="rqZ-Wa-bYJ" firstAttribute="top" secondItem="5Tb-AU-c8u" secondAttribute="bottom" id="Vlb-Vu-olJ"/>
+                            <constraint firstItem="D3j-Fd-F8T" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zct-2h-9Qe" secondAttribute="trailing" constant="10" id="WEH-Ck-yRd"/>
                             <constraint firstItem="5Tb-AU-c8u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="D3j-Fd-F8T" secondAttribute="leading" symbolic="YES" id="Ytj-Og-ZXL"/>
                             <constraint firstItem="5Tb-AU-c8u" firstAttribute="top" secondItem="sFP-2w-a4o" secondAttribute="bottom" constant="10" id="Ytq-hd-2oE"/>
                             <constraint firstItem="D3j-Fd-F8T" firstAttribute="trailing" secondItem="3U2-8I-cSw" secondAttribute="trailing" constant="10" id="YuC-s8-Y0g"/>
@@ -208,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GpC-Ay-yyw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1712" y="84"/>
+            <point key="canvasLocation" x="1711.5942028985507" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ei5-Dj-gJn">
