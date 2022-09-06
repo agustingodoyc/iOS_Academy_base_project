@@ -1,27 +1,25 @@
 //
-//  Ted_TalkTests.swift
+//  Parse_Test.swift
 //  Ted TalkTests
 //
-//  Created by Gonzalo Perretti on 4/6/21.
+//  Created by Agustin Godoy Cosser on 02/09/2022.
 //
 
 import XCTest
 @testable import Ted_Talk
 
-class Ted_TalkTests: XCTestCase {
-    
-    var sut: Parser!
+class Parse_Test: XCTestCase {
 
+    let sut: Parser = Parser()
+    
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = Parser()
     }
 
     override func tearDownWithError() throws {
-        sut = nil
         try super.tearDownWithError()
     }
-
+    
     func testParse() {
         let promise = self.expectation(description: "Scaling")
         var talks: [TedTalk]?
@@ -58,4 +56,5 @@ class Ted_TalkTests: XCTestCase {
         
         waitForExpectations(timeout: 5, handler: nil)
     }
+
 }
