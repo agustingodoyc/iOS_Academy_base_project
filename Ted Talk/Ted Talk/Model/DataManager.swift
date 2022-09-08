@@ -12,18 +12,18 @@ public class DataManager {
     
     // MARK: - Properties
     
-    private var file: String
+    private var service: ServiceProtocol
     private var data: [TedTalk]
     
-    init (_ file: String = "tedTalks") {
-        self.file = file
-        data = []
+    init (_ service: ServiceProtocol = TedTalkService()){
+        self.service = service
+        self.data = []
     }
     
     // MARK: Methods
     
     func getTalks(completionHandler: @escaping ([TedTalk]) -> Void){
-        Parser().parse(file) { result in
+        service.getTedTalks() { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):

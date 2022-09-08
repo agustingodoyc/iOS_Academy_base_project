@@ -8,16 +8,18 @@
 import Foundation
 import UIKit
 
-public class Parser {
+public class Parser: ServiceProtocol {
     
-    enum ParseError: Error {
-        case fileNotFound
-        case decodeError
+    private var file: String
+    //private var service: ServiceProtocol
+    
+    init (_ file: String = "tedTalks") {
+        self.file = file
     }
     
-    func parse(_ file: String, completionHandler: @escaping (Result<[TedTalk], ParseError>) -> Void){
+    func getTedTalks(_ completionHandler: @escaping (Result<[TedTalk], ServiceError>) -> Void) {
         DispatchQueue.global(qos: .background).async {
-            guard let fileLocation = Bundle.main.url(forResource: file, withExtension: "json") else {
+            guard let fileLocation = Bundle.main.url(forResource: self.file, withExtension: "json") else {
                 completionHandler(.failure(.fileNotFound))
                 return
             }
@@ -27,7 +29,7 @@ public class Parser {
                 let dataFromJson = try jsonDecoder.decode([TedTalk].self, from: data)
                 completionHandler(.success(dataFromJson))
             } catch {
-                completionHandler(.failure(.decodeError))
+                completionHandler(.failure(.parseError))
             }
         }
     }

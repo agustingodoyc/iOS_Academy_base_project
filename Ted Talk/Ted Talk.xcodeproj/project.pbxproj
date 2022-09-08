@@ -23,6 +23,8 @@
 		D67A116E28C29A8500296512 /* DataManager_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A116D28C29A8500296512 /* DataManager_Test.swift */; };
 		D68B702028C6812F00192212 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68B701F28C6812F00192212 /* DetailViewController.swift */; };
 		D68B702428C6898F00192212 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68B702328C6898F00192212 /* DetailModel.swift */; };
+		D6C7564428C91CAE00C855B9 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7564328C91CAE00C855B9 /* ServiceProtocol.swift */; };
+		D6C7564628C91E2C00C855B9 /* TedTalkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7564528C91E2C00C855B9 /* TedTalkService.swift */; };
 		D6DC5ED428BD4EE700ED9DC5 /* TedTalkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC5ED328BD4EE700ED9DC5 /* TedTalkCell.swift */; };
 		D6DC5ED628BD56CD00ED9DC5 /* TedTalkCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC5ED528BD56CD00ED9DC5 /* TedTalkCellModel.swift */; };
 /* End PBXBuildFile section */
@@ -67,6 +69,8 @@
 		D67A116D28C29A8500296512 /* DataManager_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager_Test.swift; sourceTree = "<group>"; };
 		D68B701F28C6812F00192212 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D68B702328C6898F00192212 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		D6C7564328C91CAE00C855B9 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		D6C7564528C91E2C00C855B9 /* TedTalkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkService.swift; sourceTree = "<group>"; };
 		D6DC5ED328BD4EE700ED9DC5 /* TedTalkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkCell.swift; sourceTree = "<group>"; };
 		D6DC5ED528BD56CD00ED9DC5 /* TedTalkCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,7 @@
 		B3F949BA266A727C00D626BB /* Ted Talk */ = {
 			isa = PBXGroup;
 			children = (
+				D6C7564228C91C9200C855B9 /* Protocols */,
 				D6AD62C228B541A000247DBE /* Model */,
 				D6AD62C128B5411C00247DBE /* Controller */,
 				D6AD62C028B5410B00247DBE /* View */,
@@ -186,8 +191,17 @@
 				D62270A728B4244F00DF7BB7 /* Parser.swift */,
 				D62270A928B4253B00DF7BB7 /* TedTalk.swift */,
 				D6368D0B28B7F69500369572 /* DataManager.swift */,
+				D6C7564528C91E2C00C855B9 /* TedTalkService.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D6C7564228C91C9200C855B9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D6C7564328C91CAE00C855B9 /* ServiceProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,7 +345,9 @@
 				D68B702428C6898F00192212 /* DetailModel.swift in Sources */,
 				D62270AA28B4253B00DF7BB7 /* TedTalk.swift in Sources */,
 				B3F949BC266A727C00D626BB /* AppDelegate.swift in Sources */,
+				D6C7564628C91E2C00C855B9 /* TedTalkService.swift in Sources */,
 				B3F949BE266A727C00D626BB /* SceneDelegate.swift in Sources */,
+				D6C7564428C91CAE00C855B9 /* ServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
