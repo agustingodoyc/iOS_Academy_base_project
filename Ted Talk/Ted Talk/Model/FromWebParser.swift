@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TedTalkService: ServiceProtocol {
+class FromWebParser: ServiceProtocol {
     
     struct Configuration {
         static let urlAsString = "https://gist.githubusercontent.com/gonzaloperretti/0e79c229a5de5bacdd07f402c1a3cefd/raw/975582a4389601caa90d21227446ef2838159176/tedTalks.json"

@@ -12,7 +12,7 @@ class DetailViewController: UIViewController, WKUIDelegate {
     
     // MARK: - Outles
     
-    @IBOutlet weak var talkTitle: UILabel!
+    @IBOutlet weak var tedTalkTitle: UILabel!
     @IBOutlet weak var views: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var name: UILabel!
@@ -22,7 +22,7 @@ class DetailViewController: UIViewController, WKUIDelegate {
     
     // MARK: - Properties
     
-    var talk: DetailModel?
+    var tedTalk: DetailModel?
 
     // MARK: - View Life Cycle
     
@@ -31,7 +31,7 @@ class DetailViewController: UIViewController, WKUIDelegate {
 
         ShowDetail()
         
-        guard let myURL = URL(string: talk?.url ?? "") else { return }
+        guard let myURL = URL(string: tedTalk?.url ?? "") else { return }
         let myRequest = URLRequest(url: myURL)
         webView.load(myRequest)
     }
@@ -40,16 +40,16 @@ class DetailViewController: UIViewController, WKUIDelegate {
     // MARK: - Functions
      
      func ShowDetail() {
-         guard let talk = talk else {
+         guard let tedTalk = tedTalk else {
              return
          }
-         talkTitle.text = talk.title
-         views.text = "#of views: \(String(talk.views))"
-         date.text = "Published date: \(String(talk.date))"
-         name.text = (talk.name)
-         desc.text = talk.description
-         for _ in talk.tags {
-             tags.text = "Tags: \(talk.tags.joined(separator: ", ")) "
+         tedTalkTitle.text = tedTalk.title
+         views.text = "#of views: \(String(tedTalk.views))"
+         date.text = "Published date: \(String(tedTalk.date))"
+         name.text = (tedTalk.name)
+         desc.text = tedTalk.description
+         for _ in tedTalk.tags {
+             tags.text = "Tags: \(tedTalk.tags.joined(separator: ", ")) "
          }
      }
 }

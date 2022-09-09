@@ -12,7 +12,7 @@
         <!--View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="View" title="View" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Ted_Talk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="View" title="View" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TableViewController" customModule="Ted_Talk" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="355" width="414" height="507"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tedTalkCell" id="BDz-Ki-ciI" userLabel="TedTalkCell" customClass="TedTalkCell" customModule="Ted_Talk" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tedTalkCell" id="BDz-Ki-ciI" userLabel="TedTalkCell" customClass="CellView" customModule="Ted_Talk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="112"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BDz-Ki-ciI" id="hRk-K9-tjC">
@@ -66,8 +66,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="desc" destination="DVE-FI-Mwv" id="hgC-eL-C2u"/>
                                             <outlet property="name" destination="NUb-yR-ZEH" id="JeU-Ff-6sd"/>
+                                            <outlet property="tedTalkDescription" destination="DVE-FI-Mwv" id="hgC-eL-C2u"/>
                                             <segue destination="yvo-OM-h5R" kind="show" identifier="detail" destinationCreationSelector="detail" id="7Ap-uu-aat"/>
                                         </connections>
                                     </tableViewCell>
@@ -205,7 +205,7 @@
                         <outlet property="desc" destination="3U2-8I-cSw" id="4Rz-1w-0gA"/>
                         <outlet property="name" destination="Scy-m4-H2E" id="5K2-5R-OvK"/>
                         <outlet property="tags" destination="7tT-Uz-r3U" id="Pbh-Rg-ZtM"/>
-                        <outlet property="talkTitle" destination="Zct-2h-9Qe" id="ZbS-hx-trY"/>
+                        <outlet property="tedTalkTitle" destination="Zct-2h-9Qe" id="ZbS-hx-trY"/>
                         <outlet property="views" destination="5Tb-AU-c8u" id="SKq-ok-QQy"/>
                         <outlet property="webView" destination="sFP-2w-a4o" id="vs1-9o-U9h"/>
                     </connections>

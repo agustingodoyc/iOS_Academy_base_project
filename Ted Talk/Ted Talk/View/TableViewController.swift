@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TableViewController: UIViewController {
     
     // MARK: - View Outlets
     
@@ -16,27 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var picker: UIPickerView!
     
-    // MARK: - View Properties
+    // MARK: - Properties
     
-    var data: [TedTalk] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
-    let dataManager: DataManager = DataManager()
-    
-    enum pickerOptions: String, CaseIterable {
-        case event = "Event"
-        case main_speaker = "Main Speaker"
-        case title = "Title"
-        case name = "Name"
-        case description = "Description"
-    }
-    
-    var filters: Array<String> {
-        return pickerOptions.allCases.map { $0.rawValue }
-    }
+    lazy var viewModel = { TableViewModel() }()
     
     // MARK: - View Life Cycle
     
@@ -49,52 +31,44 @@ class ViewController: UIViewController {
         picker.delegate = self
         searchBar.delegate = self
         activityIndicator.hidesWhenStopped = true
-        self.activityIndicator.startAnimating()
-        
-        dataManager.getTalks() { talks in
-            self.data = talks
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.activityIndicator.stopAnimating()
-                self.tableView.isHidden = false
-                self.searchBar.isHidden = false
-                self.picker.isHidden = false
-            }
-        }
+        activityIndicator.startAnimating()
+        viewModel.delegate = self
+        viewModel.updateData()
     }
 }
 
 // MARK: - Table View
     
-extension ViewController: UITableViewDataSource {
+extension TableViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
+        return viewModel.getDataRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "tedTalkCell",
-                                                       for: indexPath) as? TedTalkCell else {
+                                                       for: indexPath) as? CellView else {
             return UITableViewCell()
         }
         
-        cell.loadData(.init(talk: data[indexPath.row]))
+        cell.loadData(.init(viewModel.getCell(indexPath.row)))
         return cell
     }
 }
 
 //MARK: - Picker View
 
-extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension TableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerOptions.allCases.count
+        return viewModel.getPickersCount()
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerOptions.allCases[row].rawValue
+        return viewModel.getPicker(row)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -102,27 +76,42 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             return
         }
         
-        data = dataManager.serchWord(searchText: searchBar.text ?? "", picker: filters[picker.selectedRow(inComponent: 0)])
+        viewModel.filterData(searchText: searchBar.text ?? "", picker: picker.selectedRow(inComponent: 0))
     }
 }
 
 // MARK: - Search Bar
 
-extension ViewController: UISearchBarDelegate {
+extension TableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        data = dataManager.serchWord(searchText: searchText, picker: filters[picker.selectedRow(inComponent: 0)])
+        viewModel.filterData(searchText: searchText, picker: picker.selectedRow(inComponent: 0))
     }
 }
 
 // MARK: - Detail View
 
-extension ViewController {
+extension TableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedPath = tableView.indexPathForSelectedRow else {
             return
         }
         if segue.identifier == "detail", let destination = segue.destination as? DetailViewController {
-            destination.talk = .init(talk: data[selectedPath.row])
+            destination.tedTalk = .init(viewModel.getCell(selectedPath.row))
         }
+    }
+}
+
+// MARK: - Delegate
+
+extension TableViewController: ViewModelDelegate {
+    func loadData() {
+        self.activityIndicator.stopAnimating()
+        self.tableView.isHidden = false
+        self.searchBar.isHidden = false
+        self.picker.isHidden = false
+    }
+    
+    func reloadData() {
+        tableView.reloadData()
     }
 }

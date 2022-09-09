@@ -10,16 +10,19 @@ import UIKit
 
 public class Parser: ServiceProtocol {
     
-    private var file: String
-    //private var service: ServiceProtocol
+    // MARK: - Properties
     
-    init (_ file: String = "tedTalks") {
-        self.file = file
+    private var fileName: String
+    
+    init (_ fileName: String = "tedTalks") {
+        self.fileName = fileName
     }
+    
+    // MARK: - Methods
     
     func getTedTalks(_ completionHandler: @escaping (Result<[TedTalk], ServiceError>) -> Void) {
         DispatchQueue.global(qos: .background).async {
-            guard let fileLocation = Bundle.main.url(forResource: self.file, withExtension: "json") else {
+            guard let fileLocation = Bundle.main.url(forResource: self.fileName, withExtension: "json") else {
                 completionHandler(.failure(.fileNotFound))
                 return
             }

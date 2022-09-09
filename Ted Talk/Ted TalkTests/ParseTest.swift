@@ -8,7 +8,7 @@
 import XCTest
 @testable import Ted_Talk
 
-class Parse_Test: XCTestCase {
+class ParseTest: XCTestCase {
 
     let sut: Parser = Parser()
     

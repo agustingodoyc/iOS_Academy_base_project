@@ -8,15 +8,15 @@
 import Foundation
 import UIKit
 
-class TedTalkCell: UITableViewCell {
+class CellView: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var tedTalkDescription: UILabel!
     
     
-    func loadData(_ tedTalk: TedTalkCellModel){
+    func loadData(_ tedTalk: CellModel){
         name.text = tedTalk.name
-        desc.text = tedTalk.description
+        tedTalkDescription.text = tedTalk.description
     }
     
 }
