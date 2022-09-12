@@ -20,7 +20,3 @@ enum ServiceError: Error {
 protocol ServiceProtocol {
     func getTedTalks(_ completionHandler: @escaping (Result<[TedTalk], ServiceError>) -> Void)
 }
-
-
-
-
