@@ -42,7 +42,7 @@ class TableViewController: UIViewController {
 extension TableViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getDataRows()
+        return viewModel.getNumberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,7 +51,7 @@ extension TableViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.loadData(.init(viewModel.getCell(indexPath.row)))
+        cell.loadData(viewModel.getCell(indexPath.row))
         return cell
     }
 }
@@ -96,7 +96,7 @@ extension TableViewController {
             return
         }
         if segue.identifier == "detail", let destination = segue.destination as? DetailViewController {
-            destination.tedTalk = .init(viewModel.getCell(selectedPath.row))
+            destination.tedTalk = viewModel.getDetail(selectedPath.row)
         }
     }
 }

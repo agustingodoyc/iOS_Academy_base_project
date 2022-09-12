@@ -26,7 +26,7 @@
 		D68B702028C6812F00192212 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68B701F28C6812F00192212 /* DetailViewController.swift */; };
 		D68B702428C6898F00192212 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68B702328C6898F00192212 /* DetailModel.swift */; };
 		D6C7564428C91CAE00C855B9 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7564328C91CAE00C855B9 /* ServiceProtocol.swift */; };
-		D6C7564628C91E2C00C855B9 /* FromWebParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7564528C91E2C00C855B9 /* FromWebParser.swift */; };
+		D6C7564628C91E2C00C855B9 /* NSURLSessionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7564528C91E2C00C855B9 /* NSURLSessionParser.swift */; };
 		D6DC5ED428BD4EE700ED9DC5 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC5ED328BD4EE700ED9DC5 /* CellView.swift */; };
 		D6DC5ED628BD56CD00ED9DC5 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC5ED528BD56CD00ED9DC5 /* CellModel.swift */; };
 /* End PBXBuildFile section */
@@ -74,7 +74,7 @@
 		D68B701F28C6812F00192212 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D68B702328C6898F00192212 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		D6C7564328C91CAE00C855B9 /* ServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
-		D6C7564528C91E2C00C855B9 /* FromWebParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromWebParser.swift; sourceTree = "<group>"; };
+		D6C7564528C91E2C00C855B9 /* NSURLSessionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSURLSessionParser.swift; sourceTree = "<group>"; };
 		D6DC5ED328BD4EE700ED9DC5 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		D6DC5ED528BD56CD00ED9DC5 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,7 +196,7 @@
 				D62270A928B4253B00DF7BB7 /* TedTalk.swift */,
 				D6368D0B28B7F69500369572 /* DataManager.swift */,
 				D62270A728B4244F00DF7BB7 /* Parser.swift */,
-				D6C7564528C91E2C00C855B9 /* FromWebParser.swift */,
+				D6C7564528C91E2C00C855B9 /* NSURLSessionParser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 				D62270AA28B4253B00DF7BB7 /* TedTalk.swift in Sources */,
 				D66DFC7828CB787E00B9873A /* TableViewModel.swift in Sources */,
 				B3F949BC266A727C00D626BB /* AppDelegate.swift in Sources */,
-				D6C7564628C91E2C00C855B9 /* FromWebParser.swift in Sources */,
+				D6C7564628C91E2C00C855B9 /* NSURLSessionParser.swift in Sources */,
 				B3F949BE266A727C00D626BB /* SceneDelegate.swift in Sources */,
 				D6C7564428C91CAE00C855B9 /* ServiceProtocol.swift in Sources */,
 			);

@@ -15,7 +15,7 @@ public class DataManager {
     private var service: ServiceProtocol
     private var data: [TedTalk]
     
-    init (_ service: ServiceProtocol = FromWebParser()){
+    init (_ service: ServiceProtocol = NSURLSessionParser()){
         self.service = service
         self.data = []
     }

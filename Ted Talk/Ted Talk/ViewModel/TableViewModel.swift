@@ -46,12 +46,16 @@ class TableViewModel {
 // MARK: - Table View
 
 extension TableViewModel {
-    func getDataRows() -> Int {
+    func getNumberOfRows() -> Int {
         return self.data.count
     }
     
-    func getCell(_ index: Int) -> TedTalk {
+    func getTedTalk(_ index: Int) -> TedTalk {
         return data[index]
+    }
+    
+    func getCell(_ index: Int) -> CellModel {
+        return .init(getTedTalk(index))
     }
 }
 
@@ -68,6 +72,14 @@ extension TableViewModel {
     
     func filterData(searchText: String, picker: Int) {
         data = dataManager.filterByText(text: searchText, picker: filters[picker])
+    }
+}
+
+// MARK: - Detail View
+
+extension TableViewModel {
+    func getDetail(_ index: Int) -> DetailModel {
+        return .init(getTedTalk(index))
     }
 }
 
