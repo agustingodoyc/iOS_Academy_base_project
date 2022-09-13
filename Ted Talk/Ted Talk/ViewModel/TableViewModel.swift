@@ -13,7 +13,7 @@ class TableViewModel {
     
     let dataManager: DataManager = DataManager()
     
-    var delegate: ViewModelDelegate?
+    weak var delegate: ViewModelDelegate?
     
     var data: [TedTalk] = [] {
         didSet {

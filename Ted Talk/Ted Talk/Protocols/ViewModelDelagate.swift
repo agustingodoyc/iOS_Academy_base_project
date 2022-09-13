@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ViewModelDelegate {
+protocol ViewModelDelegate: AnyObject {
     func loadData()
     func reloadData()
 }
