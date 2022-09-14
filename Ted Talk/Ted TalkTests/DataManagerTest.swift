@@ -10,7 +10,7 @@ import XCTest
 
 class DataManagerTest: XCTestCase {
 
-    let sut: DataManager = DataManager("test")
+    let sut: DataManager = DataManager(Parser("test"))
     
     override func setUpWithError() throws {
         try super.setUpWithError()
