@@ -4,13 +4,12 @@
 //
 //  Created by Agustin Godoy Cosser on 02/09/2022.
 //
-
 import XCTest
 @testable import Ted_Talk
 
 class ParseTest: XCTestCase {
 
-    let sut: Parser = Parser()
+    var sut: Parser!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -23,8 +22,8 @@ class ParseTest: XCTestCase {
     func testParse() {
         let promise = self.expectation(description: "Scaling")
         var talks: [TedTalk]?
-
-        sut.parse("test") { result in
+        sut = Parser("test")
+        sut.getTedTalks() { result in
             switch result {
             case .success(let aux):
                 talks = aux
@@ -44,8 +43,8 @@ class ParseTest: XCTestCase {
 
     func  testParseToFail() {
         let promise = self.expectation(description: "Scaling")
-
-        sut.parse("xxxx") { result in
+        sut = Parser("xxxx")
+        sut.getTedTalks() { result in
             switch result {
             case .success(_):
                 XCTFail()

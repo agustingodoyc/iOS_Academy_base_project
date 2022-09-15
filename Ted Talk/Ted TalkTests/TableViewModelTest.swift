@@ -1,16 +1,15 @@
 //
-//  DataManager_Test.swift
+//  TableViewModelTest.swift
 //  Ted TalkTests
 //
 //  Created by Agustin Godoy Cosser on 02/09/2022.
 //
-
 import XCTest
 @testable import Ted_Talk
 
-class DataManagerTest: XCTestCase {
+class TableViewModelTest: XCTestCase {
 
-    let sut: DataManager = DataManager("test")
+    let sut: TableViewModel = TableViewModel(DataManager(Parser("test")))
     
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -24,16 +23,17 @@ class DataManagerTest: XCTestCase {
         let promise = self.expectation(description: "Scaling")
         var talks: [TedTalk]?
         
-        sut.getData { result in
+        sut.dataManager.getData { result in
             talks = result
             promise.fulfill()
         }
         
         waitForExpectations(timeout: 5, handler: nil)
         
-        talks = sut.filterByText(text: "x", picker: "description")
+        sut.filterData(text: "x", picker: 1)
+        
+        talks = sut.filteredData
         
         XCTAssertEqual(talks?.count, 0, "Score computed from guess is wrong")
     }
-
 }
