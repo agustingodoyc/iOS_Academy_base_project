@@ -15,14 +15,14 @@ public class DataManager {
     private var service: ServiceProtocol
     private var data: [TedTalk]
     
-    init (_ service: ServiceProtocol = TedTalkService()){
+    init (_ service: ServiceProtocol = NSURLSessionParser()){
         self.service = service
         self.data = []
     }
     
-    // MARK: Methods
+    // MARK: - Methods
     
-    func getTalks(completionHandler: @escaping ([TedTalk]) -> Void){
+    func getData(completionHandler: @escaping ([TedTalk]) -> Void){
         service.getTedTalks() { result in
             DispatchQueue.main.async {
                 switch result {
@@ -36,26 +36,26 @@ public class DataManager {
         }
     }
     
-    func serchWord(searchText: String, picker: String) -> [TedTalk] {
+    func filterByText(text: String, picker: String) -> [TedTalk] {
         var filteredData: [TedTalk] = []
-        guard searchText != "" else {
+        guard text != "" else {
             return data
         }
         filteredData = data.filter { talk in
             switch picker {
             case "Event":
-                return talk.event.lowercased().contains(searchText.lowercased())
+                return talk.event.lowercased().contains(text.lowercased())
             case "Main Speaker":
-                return talk.main_speaker.lowercased().contains(searchText.lowercased())
+                return talk.main_speaker.lowercased().contains(text.lowercased())
             case "Title":
-                return talk.title.lowercased().contains(searchText.lowercased())
+                return talk.title.lowercased().contains(text.lowercased())
             case "Name":
-                return talk.name.lowercased().contains(searchText.lowercased())
+                return talk.name.lowercased().contains(text.lowercased())
             case "Description":
-                return talk.description.lowercased().contains(searchText.lowercased())
+                return talk.description.lowercased().contains(text.lowercased())
             default:
                 return [talk.event, talk.main_speaker, talk.title, talk.name, talk.description]
-                    .map({ $0.lowercased() }).reduce(false) { $0 || $1.contains(searchText.lowercased()) }
+                    .map({ $0.lowercased() }).reduce(false) { $0 || $1.contains(text.lowercased()) }
             }
         }
         return filteredData

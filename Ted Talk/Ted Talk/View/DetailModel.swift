@@ -15,13 +15,13 @@ struct DetailModel {
     let description: String
     let tags: [String]
     
-    init(talk: TedTalk) {
-        title = talk.title
-        url = talk.url
-        views = talk.views
-        date = talk.film_date
-        name = talk.name
-        description = talk.description
-        tags = talk.tags
+    init(_ tedTalk: TedTalk) {
+        title = tedTalk.title
+        url = tedTalk.url
+        views = tedTalk.views
+        date = tedTalk.film_date
+        name = tedTalk.name
+        description = tedTalk.description
+        tags = tedTalk.tags
     }
 }

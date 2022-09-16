@@ -8,9 +8,9 @@
 import XCTest
 @testable import Ted_Talk
 
-class DataManager_Test: XCTestCase {
+class DataManagerTest: XCTestCase {
 
-    let sut: DataManager = DataManager("test")
+    let sut: DataManager = DataManager(Parser("test"))
     
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -24,14 +24,14 @@ class DataManager_Test: XCTestCase {
         let promise = self.expectation(description: "Scaling")
         var talks: [TedTalk]?
         
-        sut.getTalks { result in
+        sut.getData { result in
             talks = result
             promise.fulfill()
         }
         
         waitForExpectations(timeout: 5, handler: nil)
         
-        talks = sut.serchWord(searchText: "x", picker: "description")
+        talks = sut.filterByText(text: "x", picker: "description")
         
         XCTAssertEqual(talks?.count, 0, "Score computed from guess is wrong")
     }

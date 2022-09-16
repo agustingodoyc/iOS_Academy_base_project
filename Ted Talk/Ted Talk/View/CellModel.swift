@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct TedTalkCellModel {
+struct CellModel {
     let name: String
     let description: String
     
-    init (talk: TedTalk) {
-        name = talk.name
-        description = talk.description
+    init (_ tedTalk: TedTalk) {
+        name = tedTalk.name
+        description = tedTalk.description
     }
 }
