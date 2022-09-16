@@ -11,15 +11,17 @@ class TableViewModel {
     
     // MARK: - Properties
     
-    let dataManager: DataManager = DataManager()
+    let dataManager: DataManager
     
     weak var delegate: ViewModelDelegate?
     
-    var data: [TedTalk] = [] {
+    var filteredData: [TedTalk] = [] {
         didSet {
             delegate?.reloadData()
         }
     }
+    
+    var tedTalkData: [TedTalk] = []
     
     var filters: Array<String> {
         return pickerOptions.allCases.map { $0.rawValue }
@@ -33,12 +35,17 @@ class TableViewModel {
         case description = "Description"
     }
     
+    init(_ dataManager: DataManager = DataManager()){
+        self.dataManager = dataManager
+    }
+    
     // MARK: - Methods
     
     func updateData() {
         dataManager.getData() { result in
             self.delegate?.loadData()
-            self.data = result
+            self.tedTalkData = result
+            self.filteredData = result
         }
     }
 }
@@ -47,15 +54,43 @@ class TableViewModel {
 
 extension TableViewModel {
     func getNumberOfRows() -> Int {
-        return self.data.count
+        return self.filteredData.count
     }
     
     func getTedTalk(_ index: Int) -> TedTalk {
-        return data[index]
+        return filteredData[index]
     }
     
     func getCell(_ index: Int) -> CellModel {
         return .init(getTedTalk(index))
+    }
+}
+
+// MARK: - Search Bar
+
+extension TableViewModel {
+    func filterData(text: String, picker: Int) {
+        guard text != "" else {
+            filteredData = tedTalkData
+            return
+        }
+        filteredData = tedTalkData.filter { talk in
+            switch filters[picker] {
+            case "Event":
+                return talk.event.lowercased().contains(text.lowercased())
+            case "Main Speaker":
+                return talk.main_speaker.lowercased().contains(text.lowercased())
+            case "Title":
+                return talk.title.lowercased().contains(text.lowercased())
+            case "Name":
+                return talk.name.lowercased().contains(text.lowercased())
+            case "Description":
+                return talk.description.lowercased().contains(text.lowercased())
+            default:
+                return [talk.event, talk.main_speaker, talk.title, talk.name, talk.description]
+                    .map({ $0.lowercased() }).reduce(false) { $0 || $1.contains(text.lowercased()) }
+            }
+        }
     }
 }
 
@@ -68,10 +103,6 @@ extension TableViewModel {
     
     func getPicker(_ row: Int) -> String? {
         return pickerOptions.allCases[row].rawValue
-    }
-    
-    func filterData(searchText: String, picker: Int) {
-        data = dataManager.filterByText(text: searchText, picker: filters[picker])
     }
 }
 

@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import Lottie
 
 class TableViewController: UIViewController {
     
     // MARK: - View Outlets
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var animationView: AnimationView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var picker: UIPickerView!
@@ -24,14 +25,14 @@ class TableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        animationView.isHidden = false
         tableView.isHidden = true
         picker.isHidden = true
         searchBar.isHidden = true
+        lottieAnimation()
         picker.dataSource = self
         picker.delegate = self
         searchBar.delegate = self
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating()
         viewModel.delegate = self
         viewModel.updateData()
     }
@@ -76,7 +77,7 @@ extension TableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             return
         }
         
-        viewModel.filterData(searchText: searchBar.text ?? "", picker: picker.selectedRow(inComponent: 0))
+        viewModel.filterData(text: searchBar.text ?? "", picker: picker.selectedRow(inComponent: 0))
     }
 }
 
@@ -84,7 +85,7 @@ extension TableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 extension TableViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.filterData(searchText: searchText, picker: picker.selectedRow(inComponent: 0))
+        viewModel.filterData(text: searchText, picker: picker.selectedRow(inComponent: 0))
     }
 }
 
@@ -105,7 +106,8 @@ extension TableViewController {
 
 extension TableViewController: ViewModelDelegate {
     func loadData() {
-        self.activityIndicator.stopAnimating()
+        self.animationView.stop()
+        self.animationView.isHidden = true
         self.tableView.isHidden = false
         self.searchBar.isHidden = false
         self.picker.isHidden = false
@@ -113,5 +115,15 @@ extension TableViewController: ViewModelDelegate {
     
     func reloadData() {
         tableView.reloadData()
+    }
+}
+
+// MARK: - Lottie Loader
+
+extension TableViewController {
+    func lottieAnimation() {
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.play()
     }
 }
