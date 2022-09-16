@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol ViewModelDelegate: AnyObject {
     func loadData()
     func reloadData()

@@ -9,7 +9,15 @@ import XCTest
 
 class TableViewModelTest: XCTestCase {
 
-    let sut: TableViewModel = TableViewModel(DataManager(Parser("test")))
+    struct MockService: ServiceProtocol {
+        var talks: [TedTalk] = [TedTalk(comments: 1, description: "Description", duration: 1, event: "Event", film_date: 1, languages: 1, main_speaker: "Main Speaker", name: "Name", num_speaker: 1, published_date: 1, speaker_occupation: "Speaker Occupation", tags: ["tag"], title: "Title", url: "URL", views: 1)]
+        
+        func getTedTalks(_ completionHandler: @escaping (Result<[Ted_Talk.TedTalk], Ted_Talk.ServiceError>) -> Void) {
+            completionHandler(.success(talks))
+        }
+    }
+    
+    let sut: TableViewModel = TableViewModel(DataManager(MockService()))
     
     override func setUpWithError() throws {
         try super.setUpWithError()
