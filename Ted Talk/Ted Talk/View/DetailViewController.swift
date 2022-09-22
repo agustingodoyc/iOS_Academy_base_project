@@ -16,7 +16,7 @@ class DetailViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var views: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var descript: UILabel!
     @IBOutlet weak var tags: UILabel!
     @IBOutlet weak var webView: WKWebView!
     
@@ -47,7 +47,7 @@ class DetailViewController: UIViewController, WKUIDelegate {
          views.text = "#of views: \(String(tedTalk.views))"
          date.text = "Published date: \(String(tedTalk.date))"
          name.text = (tedTalk.name)
-         desc.text = tedTalk.description
+         descript.text = tedTalk.descript
          for _ in tedTalk.tags {
              tags.text = "Tags: \(tedTalk.tags.joined(separator: ", ")) "
          }

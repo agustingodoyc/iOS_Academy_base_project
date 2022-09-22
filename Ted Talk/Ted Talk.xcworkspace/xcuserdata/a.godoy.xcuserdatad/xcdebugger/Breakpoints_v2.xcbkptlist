@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "779627F5-EF7A-46EB-B4BA-8002D193465E"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A074D78E-E66C-4AF9-871F-9C1B0BF7C1F4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ted Talk/View/TableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "TableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A074D78E-E66C-4AF9-871F-9C1B0BF7C1F4 - 5a27c443e5d5cef3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ted_Talk.TableViewController.viewModel.getter : Ted_Talk.TableViewModel"
+                  moduleName = "Ted Talk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a.godoy/Documents/iOS_Academy_base_project/Ted%20Talk/Ted%20Talk/View/TableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "183">
+               </Location>
+               <Location
+                  uuid = "A074D78E-E66C-4AF9-871F-9C1B0BF7C1F4 - 83959ae67acc608d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Ted_Talk.TableViewModel in Ted_Talk.TableViewController.viewModel.getter : Ted_Talk.TableViewModel"
+                  moduleName = "Ted Talk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a.godoy/Documents/iOS_Academy_base_project/Ted%20Talk/Ted%20Talk/View/TableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "11">
+               </Location>
+               <Location
+                  uuid = "A074D78E-E66C-4AF9-871F-9C1B0BF7C1F4 - f3cf0b73b44d54cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ted_Talk.TableViewController.viewModel.setter : Ted_Talk.TableViewModel"
+                  moduleName = "Ted Talk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a.godoy/Documents/iOS_Academy_base_project/Ted%20Talk/Ted%20Talk/View/TableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "A074D78E-E66C-4AF9-871F-9C1B0BF7C1F4 - 216f5f08c9371d70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ted_Talk.TableViewController.viewModel.modify : Ted_Talk.TableViewModel"
+                  moduleName = "Ted Talk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a.godoy/Documents/iOS_Academy_base_project/Ted%20Talk/Ted%20Talk/View/TableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "A074D78E-E66C-4AF9-871F-9C1B0BF7C1F4 - dfcfc8a11aa6f02c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ted_Talk.TableViewController.viewModel.modify : Ted_Talk.TableViewModel with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Ted Talk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a.godoy/Documents/iOS_Academy_base_project/Ted%20Talk/Ted%20Talk/View/TableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  uuid = "A074D78E-E66C-4AF9-871F-9C1B0BF7C1F4 - ec877e734977ac1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ted_Talk.TableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Ted_Talk.TableViewController"
+                  moduleName = "Ted Talk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a.godoy/Documents/iOS_Academy_base_project/Ted%20Talk/Ted%20Talk/View/TableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "329">
+               </Location>
+               <Location
+                  uuid = "A074D78E-E66C-4AF9-871F-9C1B0BF7C1F4 - ba7f573b6500bd2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Ted_Talk.TableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Ted_Talk.TableViewController&gt;"
+                  moduleName = "Ted Talk"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a.godoy/Documents/iOS_Academy_base_project/Ted%20Talk/Ted%20Talk/View/TableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "286">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

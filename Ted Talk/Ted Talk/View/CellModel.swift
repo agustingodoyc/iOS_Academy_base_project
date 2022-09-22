@@ -9,10 +9,10 @@ import Foundation
 
 struct CellModel {
     let name: String
-    let description: String
+    let descript: String
     
     init (_ tedTalk: TedTalk) {
         name = tedTalk.name
-        description = tedTalk.description
+        descript = tedTalk.descript
     }
 }

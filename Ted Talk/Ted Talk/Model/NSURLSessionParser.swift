@@ -18,14 +18,16 @@ class NSURLSessionParser: ServiceProtocol {
         let url = URL(string: Configuration.urlAsString)
         
         guard let url = url else {
-            return completionHandler(.failure(.badURL))
+            completionHandler(.failure(.badURL))
+            return
         }
-
+        
         session.dataTask(with: url) { data, response, error in
             guard error == nil else {
-                return completionHandler(.failure(.error))
+                completionHandler(.failure(.error))
+                return
             }
-
+            
             guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                 completionHandler(.failure(.serverError))
                 return
@@ -33,18 +35,17 @@ class NSURLSessionParser: ServiceProtocol {
             
             guard let data = data else {
                 completionHandler(.failure(.emptyData))
-            return
+                return
             }
             
             do {
                 let jsonDecoder = JSONDecoder()
                 let dataFromJson = try jsonDecoder.decode([TedTalk].self, from: data)
                 completionHandler(.success(dataFromJson))
-            }catch {
+            } catch {
+                print(error)
                 completionHandler(.failure(.error))
             }
         }.resume()
     }
-    
-    
 }
