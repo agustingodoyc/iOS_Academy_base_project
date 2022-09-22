@@ -39,17 +39,15 @@ public class DataManager {
             }
         } else {
             completionHandler(dataBase.getRealmData())
-            DispatchQueue.global(qos: .background).async {
-                self.service.getTedTalks() { result in
-                    DispatchQueue.main.async {
-                        switch result {
-                        case .success(let data):
-                            self.dataBase.clearData()
-                            self.dataBase.persitData(data)
-                            self.delegate?.refreshData(data)
-                        case .failure(_):
-                            break
-                        }
+            service.getTedTalks() { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let data):
+                        self.dataBase.clearData()
+                        self.dataBase.persitData(data)
+                        self.delegate?.refreshData(data)
+                    case .failure(_):
+                        break
                     }
                 }
             }

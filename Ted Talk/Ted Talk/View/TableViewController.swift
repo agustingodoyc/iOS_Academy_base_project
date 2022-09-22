@@ -34,7 +34,9 @@ class TableViewController: UIViewController {
         picker.delegate = self
         searchBar.delegate = self
         viewModel.delegate = self
-        viewModel.updateData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.viewModel.updateData()
+        }
     }
 }
 
