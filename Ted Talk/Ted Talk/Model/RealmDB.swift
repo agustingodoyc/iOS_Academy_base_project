@@ -10,22 +10,22 @@ import RealmSwift
 
 class RealmDB: DataBase {
     
-    private var realm: Realm
-    var isEmpty: Bool { return realm.isEmpty}
+    let realm: Realm
+    var isEmpty: Bool { return realm.isEmpty }
     
-    required init(){
+    init(){
         do {
-            self.realm = try Realm()
+            realm = try Realm()
         } catch {
             print("Error \(error)")
             fatalError("Unable to create an Realm instance")
         }
     }
     
-    func persitData(_ data: [TedTalk]) {
+    func persitData(_ tedTalks: [TedTalk]) {
         do {
             try realm.write {
-                realm.add(data)
+                realm.add(tedTalks)
             }
         } catch {
             print(error)
@@ -33,8 +33,8 @@ class RealmDB: DataBase {
         }
     }
     
-    func getRealmData() -> [TedTalk] {
-        return Array(self.realm.objects(TedTalk.self))
+    func getData() -> [TedTalk] {
+        return Array(realm.objects(TedTalk.self))
     }
     
     func clearData() {

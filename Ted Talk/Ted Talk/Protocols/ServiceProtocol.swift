@@ -13,10 +13,11 @@ enum ServiceError: Error {
     case serverError
     case clientError
     case badURL
-    case error
+    case dataTaskError
     case fileNotFound
+    case decoderError
 }
 
 protocol ServiceProtocol {
-    func getTedTalks(_ completionHandler: @escaping (Result<[TedTalk], ServiceError>) -> Void)
+    func parseData(_ completionHandler: @escaping (Result<[TedTalk], ServiceError>) -> Void)
 }

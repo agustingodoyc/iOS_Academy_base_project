@@ -18,7 +18,7 @@ import RealmSwift
     @Persisted var languages: Int
     @Persisted var mainSpeaker : String
     @Persisted var name: String
-    @Persisted var numSpeaker: Int
+    @Persisted var speakersNumber: Int
     @Persisted var publishedDate: Int
     @Persisted var speakerOccupation: String
     @Persisted var tags = List<String> ()
@@ -35,17 +35,16 @@ import RealmSwift
          case languages
          case mainSpeaker = "main_speaker"
          case name
-         case numSpeaker = "num_speaker"
+         case speakersNumber = "num_speaker"
          case publishedDate = "published_date"
          case speakerOccupation = "speaker_occupation"
          case tags
          case title
          case url
          case views
-         
      }
     
-    convenience init(comments: Int, descript: String, duration: Int, event: String, filmDate: Int, languages: Int, mainSpeaker: String, name: String, numSpeaker: Int, publishedDate: Int, speakerOccupation: String, tags: [String], title: String, url: String, views: Int) {
+    convenience init(comments: Int, descript: String, duration: Int, event: String, filmDate: Int, languages: Int, mainSpeaker: String, name: String, speakersNumber: Int, publishedDate: Int, speakerOccupation: String, tags: [String], title: String, url: String, views: Int) {
         self.init()
         self.comments = comments
         self.descript = descript
@@ -55,7 +54,7 @@ import RealmSwift
         self.languages = languages
         self.mainSpeaker = mainSpeaker
         self.name = name
-        self.numSpeaker = numSpeaker
+        self.speakersNumber = speakersNumber
         self.publishedDate = publishedDate
         self.speakerOccupation = speakerOccupation
         self.tags.append(objectsIn: tags)

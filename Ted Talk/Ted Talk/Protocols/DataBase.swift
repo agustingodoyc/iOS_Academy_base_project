@@ -10,6 +10,6 @@ import Foundation
 protocol DataBase {
     var isEmpty: Bool { get }
     func persitData(_ data: [TedTalk])
-    func getRealmData() -> [TedTalk]
+    func getData() -> [TedTalk]
     func clearData()
 }

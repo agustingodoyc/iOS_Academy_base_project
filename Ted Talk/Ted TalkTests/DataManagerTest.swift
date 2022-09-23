@@ -26,7 +26,7 @@ final class DataManagerTest: XCTestCase {
             self.toFail = toFail
         }
         
-        func getTedTalks(_ completionHandler: @escaping (Result<[TedTalk], ServiceError>) -> Void) {
+        func parseData(_ completionHandler: @escaping (Result<[TedTalk], ServiceError>) -> Void) {
             guard (toFail == false) else {
                 completionHandler(.failure(.emptyData))
                 return
@@ -43,7 +43,7 @@ final class DataManagerTest: XCTestCase {
         func persitData(_ data: [TedTalk]) {
             tedTalks = data
         }
-        func getRealmData() -> [TedTalk] {
+        func getData() -> [TedTalk] {
             return tedTalks
         }
         func clearData() {

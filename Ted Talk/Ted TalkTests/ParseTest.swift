@@ -23,7 +23,7 @@ class ParseTest: XCTestCase {
         let promise = self.expectation(description: "Scaling")
         var talks: [TedTalk]?
         sut = Parser("test")
-        sut.getTedTalks() { result in
+        sut.parseData() { result in
             switch result {
             case .success(let aux):
                 talks = aux
@@ -44,7 +44,7 @@ class ParseTest: XCTestCase {
     func  testParseToFail() {
         let promise = self.expectation(description: "Scaling")
         sut = Parser("xxxx")
-        sut.getTedTalks() { result in
+        sut.parseData() { result in
             switch result {
             case .success(_):
                 XCTFail()

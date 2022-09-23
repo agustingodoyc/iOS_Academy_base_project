@@ -19,7 +19,7 @@ class TableViewController: UIViewController {
     
     // MARK: - Properties
     
-    lazy var viewModel = { TableViewModel() }()
+    lazy var viewModel = TableViewModel()
     
     // MARK: - View Life Cycle
     
