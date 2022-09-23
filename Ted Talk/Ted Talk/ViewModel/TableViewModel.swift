@@ -29,7 +29,7 @@ class TableViewModel {
     
     enum pickerOptions: String, CaseIterable {
         case event = "Event"
-        case main_speaker = "Main Speaker"
+        case mainSpeaker = "Main Speaker"
         case title = "Title"
         case name = "Name"
         case descript = "Description"
@@ -37,16 +37,17 @@ class TableViewModel {
     
     init(_ dataManager: DataManager = DataManager()){
         self.dataManager = dataManager
+        self.dataManager.delegate = self
     }
     
     // MARK: - Methods
     
     func updateData() {
         self.dataManager.getData() { result in
-                self.delegate?.loadData()
-                self.tedTalkData = result
-                self.filteredData = result
-            }
+            self.delegate?.loadData()
+            self.tedTalkData = result
+            self.filteredData = result
+        }
     }
 }
 
