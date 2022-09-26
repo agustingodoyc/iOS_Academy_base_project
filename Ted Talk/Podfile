@@ -6,6 +6,7 @@ target 'Ted Talk' do
   use_frameworks!
 
   pod 'lottie-ios'
+  pod 'RealmSwift'
 
   target 'Ted TalkTests' do
     inherit! :search_paths

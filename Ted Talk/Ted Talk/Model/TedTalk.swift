@@ -6,41 +6,60 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct TedTalk: Codable {
+ class TedTalk: Object, Codable {
     
-    var comments: Int
-    var description: String
-    var duration: Int
-    var event: String
-    var film_date: Int
-    var languages: Int
-    var main_speaker : String
-    var name: String
-    var num_speaker: Int
-    var published_date: Int
-    var speaker_occupation: String
-    var tags: [String]
-    var title: String
-    var url: String
-    var views: Int
+    @Persisted var comments: Int
+    @Persisted var descript: String
+    @Persisted var duration: Int
+    @Persisted var event: String
+    @Persisted var filmDate: Int
+    @Persisted var languages: Int
+    @Persisted var mainSpeaker : String
+    @Persisted var name: String
+    @Persisted var speakersNumber: Int
+    @Persisted var publishedDate: Int
+    @Persisted var speakerOccupation: String
+    @Persisted var tags = List<String> ()
+    @Persisted var title: String
+    @Persisted var url: String
+    @Persisted var views: Int
+     
+     enum CodingKeys: String, CodingKey {
+         case comments
+         case descript = "description"
+         case duration
+         case event
+         case filmDate = "film_date"
+         case languages
+         case mainSpeaker = "main_speaker"
+         case name
+         case speakersNumber = "num_speaker"
+         case publishedDate = "published_date"
+         case speakerOccupation = "speaker_occupation"
+         case tags
+         case title
+         case url
+         case views
+     }
     
-    init(comments: Int, description: String, duration: Int, event: String, film_date: Int, languages: Int, main_speaker: String, name: String, num_speaker: Int, published_date: Int, speaker_occupation: String, tags: [String], title: String, url: String, views: Int) {
+    convenience init(comments: Int, descript: String, duration: Int, event: String, filmDate: Int, languages: Int, mainSpeaker: String, name: String, speakersNumber: Int, publishedDate: Int, speakerOccupation: String, tags: [String], title: String, url: String, views: Int) {
+        self.init()
         self.comments = comments
-        self.description = description
+        self.descript = descript
         self.duration = duration
         self.event = event
-        self.film_date = film_date
+        self.filmDate = filmDate
         self.languages = languages
-        self.main_speaker = main_speaker
+        self.mainSpeaker = mainSpeaker
         self.name = name
-        self.num_speaker = num_speaker
-        self.published_date = published_date
-        self.speaker_occupation = speaker_occupation
-        self.tags = tags
+        self.speakersNumber = speakersNumber
+        self.publishedDate = publishedDate
+        self.speakerOccupation = speakerOccupation
+        self.tags.append(objectsIn: tags)
         self.title = title
         self.url = url
         self.views = views
     }
-
 }

@@ -17,10 +17,13 @@
 		B3F949C8266A728000D626BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3F949C6266A728000D626BB /* LaunchScreen.storyboard */; };
 		B3F949DE266A728000D626BB /* Ted_TalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949DD266A728000D626BB /* Ted_TalkUITests.swift */; };
 		B3F949ED266A729400D626BB /* tedTalks.json in Resources */ = {isa = PBXBuildFile; fileRef = B3F949EC266A729400D626BB /* tedTalks.json */; };
+		D61737E328DA30C900D335D5 /* DataManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61737E228DA30C900D335D5 /* DataManagerDelegate.swift */; };
+		D61E421128DB8E8200103C15 /* DataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61E421028DB8E8200103C15 /* DataManagerTest.swift */; };
 		D62270A828B4244F00DF7BB7 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62270A728B4244F00DF7BB7 /* Parser.swift */; };
 		D62270AA28B4253B00DF7BB7 /* TedTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62270A928B4253B00DF7BB7 /* TedTalk.swift */; };
 		D6368D0C28B7F69500369572 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6368D0B28B7F69500369572 /* DataManager.swift */; };
 		D6368D0E28B8097500369572 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = D6368D0D28B8097500369572 /* test.json */; };
+		D64B081A28DCD82600D5F868 /* RealmDBTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64B081928DCD82600D5F868 /* RealmDBTest.swift */; };
 		D66DFC7828CB787E00B9873A /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66DFC7728CB787E00B9873A /* TableViewModel.swift */; };
 		D66DFC7A28CB8BDD00B9873A /* ViewModelDelagate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66DFC7928CB8BDD00B9873A /* ViewModelDelagate.swift */; };
 		D67A116628C296C900296512 /* ParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67A116528C296C900296512 /* ParseTest.swift */; };
@@ -32,6 +35,8 @@
 		D6C7564628C91E2C00C855B9 /* NSURLSessionParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C7564528C91E2C00C855B9 /* NSURLSessionParser.swift */; };
 		D6DC5ED428BD4EE700ED9DC5 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC5ED328BD4EE700ED9DC5 /* CellView.swift */; };
 		D6DC5ED628BD56CD00ED9DC5 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6DC5ED528BD56CD00ED9DC5 /* CellModel.swift */; };
+		D6FFE67D28D4FB2700F2BE89 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE67C28D4FB2700F2BE89 /* DataBase.swift */; };
+		D6FFE67F28D4FC3C00F2BE89 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FFE67E28D4FC3C00F2BE89 /* RealmDB.swift */; };
 		E4E69FEB0B311EB24221F08A /* Pods_Ted_Talk_Ted_TalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26267307D45B73BAD104855F /* Pods_Ted_Talk_Ted_TalkUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,10 +80,13 @@
 		B3F949DF266A728000D626BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F949EC266A729400D626BB /* tedTalks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tedTalks.json; sourceTree = "<group>"; };
 		CAB0D87F96A3AA62D5C09A92 /* Pods-Ted TalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ted TalkTests.release.xcconfig"; path = "Target Support Files/Pods-Ted TalkTests/Pods-Ted TalkTests.release.xcconfig"; sourceTree = "<group>"; };
+		D61737E228DA30C900D335D5 /* DataManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerDelegate.swift; sourceTree = "<group>"; };
+		D61E421028DB8E8200103C15 /* DataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTest.swift; sourceTree = "<group>"; };
 		D62270A728B4244F00DF7BB7 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		D62270A928B4253B00DF7BB7 /* TedTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalk.swift; sourceTree = "<group>"; };
 		D6368D0B28B7F69500369572 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D6368D0D28B8097500369572 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		D64B081928DCD82600D5F868 /* RealmDBTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBTest.swift; sourceTree = "<group>"; };
 		D66DFC7728CB787E00B9873A /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		D66DFC7928CB8BDD00B9873A /* ViewModelDelagate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDelagate.swift; sourceTree = "<group>"; };
 		D67A116528C296C900296512 /* ParseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseTest.swift; sourceTree = "<group>"; };
@@ -90,6 +98,8 @@
 		D6C7564528C91E2C00C855B9 /* NSURLSessionParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSURLSessionParser.swift; sourceTree = "<group>"; };
 		D6DC5ED328BD4EE700ED9DC5 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		D6DC5ED528BD56CD00ED9DC5 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		D6FFE67C28D4FB2700F2BE89 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		D6FFE67E28D4FC3C00F2BE89 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 		EB6D1BA455A5FA10F15D18CD /* Pods-Ted Talk-Ted TalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ted Talk-Ted TalkUITests.release.xcconfig"; path = "Target Support Files/Pods-Ted Talk-Ted TalkUITests/Pods-Ted Talk-Ted TalkUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,7 +187,9 @@
 			children = (
 				B3F949D4266A728000D626BB /* Info.plist */,
 				D67A116528C296C900296512 /* ParseTest.swift */,
+				D61E421028DB8E8200103C15 /* DataManagerTest.swift */,
 				D67A116D28C29A8500296512 /* TableViewModelTest.swift */,
+				D64B081928DCD82600D5F868 /* RealmDBTest.swift */,
 			);
 			path = "Ted TalkTests";
 			sourceTree = "<group>";
@@ -230,6 +242,7 @@
 				D6368D0B28B7F69500369572 /* DataManager.swift */,
 				D62270A728B4244F00DF7BB7 /* Parser.swift */,
 				D6C7564528C91E2C00C855B9 /* NSURLSessionParser.swift */,
+				D6FFE67E28D4FC3C00F2BE89 /* RealmDB.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +252,8 @@
 			children = (
 				D6C7564328C91CAE00C855B9 /* ServiceProtocol.swift */,
 				D66DFC7928CB8BDD00B9873A /* ViewModelDelagate.swift */,
+				D6FFE67C28D4FB2700F2BE89 /* DataBase.swift */,
+				D61737E228DA30C900D335D5 /* DataManagerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -503,11 +518,14 @@
 				B3F949C0266A727C00D626BB /* TableViewController.swift in Sources */,
 				D68B702428C6898F00192212 /* DetailModel.swift in Sources */,
 				D62270AA28B4253B00DF7BB7 /* TedTalk.swift in Sources */,
+				D61737E328DA30C900D335D5 /* DataManagerDelegate.swift in Sources */,
 				D66DFC7828CB787E00B9873A /* TableViewModel.swift in Sources */,
+				D6FFE67D28D4FB2700F2BE89 /* DataBase.swift in Sources */,
 				B3F949BC266A727C00D626BB /* AppDelegate.swift in Sources */,
 				D6C7564628C91E2C00C855B9 /* NSURLSessionParser.swift in Sources */,
 				B3F949BE266A727C00D626BB /* SceneDelegate.swift in Sources */,
 				D6C7564428C91CAE00C855B9 /* ServiceProtocol.swift in Sources */,
+				D6FFE67F28D4FC3C00F2BE89 /* RealmDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +533,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D61E421128DB8E8200103C15 /* DataManagerTest.swift in Sources */,
 				D67A116628C296C900296512 /* ParseTest.swift in Sources */,
+				D64B081A28DCD82600D5F868 /* RealmDBTest.swift in Sources */,
 				D67A116E28C29A8500296512 /* TableViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

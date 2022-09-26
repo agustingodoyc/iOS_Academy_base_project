@@ -11,12 +11,11 @@ import UIKit
 class CellView: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var tedTalkDescription: UILabel!
-    
+    @IBOutlet weak var descript: UILabel!
     
     func loadData(_ tedTalk: CellModel){
         name.text = tedTalk.name
-        tedTalkDescription.text = tedTalk.description
+        descript.text = tedTalk.descript
     }
     
 }

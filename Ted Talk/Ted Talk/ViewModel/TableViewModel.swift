@@ -29,23 +29,26 @@ class TableViewModel {
     
     enum pickerOptions: String, CaseIterable {
         case event = "Event"
-        case main_speaker = "Main Speaker"
+        case mainSpeaker = "Main Speaker"
         case title = "Title"
         case name = "Name"
-        case description = "Description"
+        case descript = "Description"
     }
     
     init(_ dataManager: DataManager = DataManager()){
         self.dataManager = dataManager
+        self.dataManager.delegate = self
     }
     
     // MARK: - Methods
     
     func updateData() {
         dataManager.getData() { result in
-            self.delegate?.loadData()
-            self.tedTalkData = result
-            self.filteredData = result
+            DispatchQueue.main.async() {
+                self.delegate?.loadData()
+                self.tedTalkData = result
+                self.filteredData = result
+            }
         }
     }
 }
@@ -79,15 +82,15 @@ extension TableViewModel {
             case "Event":
                 return talk.event.lowercased().contains(text.lowercased())
             case "Main Speaker":
-                return talk.main_speaker.lowercased().contains(text.lowercased())
+                return talk.mainSpeaker.lowercased().contains(text.lowercased())
             case "Title":
                 return talk.title.lowercased().contains(text.lowercased())
             case "Name":
                 return talk.name.lowercased().contains(text.lowercased())
             case "Description":
-                return talk.description.lowercased().contains(text.lowercased())
+                return talk.descript.lowercased().contains(text.lowercased())
             default:
-                return [talk.event, talk.main_speaker, talk.title, talk.name, talk.description]
+                return [talk.event, talk.mainSpeaker, talk.title, talk.name, talk.descript]
                     .map({ $0.lowercased() }).reduce(false) { $0 || $1.contains(text.lowercased()) }
             }
         }
@@ -111,6 +114,15 @@ extension TableViewModel {
 extension TableViewModel {
     func getDetail(_ index: Int) -> DetailModel {
         return .init(getTedTalk(index))
+    }
+}
+
+// MARK: - Realm
+
+extension TableViewModel: DataManagerDelegate {
+    func refreshData(_ data: [TedTalk]) {
+        tedTalkData = data
+        filteredData = data
     }
 }
 

@@ -20,16 +20,15 @@ public class Parser: ServiceProtocol {
     
     // MARK: - Methods
     
-    func getTedTalks(_ completionHandler: @escaping (Result<[TedTalk], ServiceError>) -> Void) {
+    func parseData(_ completionHandler: @escaping (Result<[TedTalk], ServiceError>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             guard let fileLocation = Bundle.main.url(forResource: self.fileName, withExtension: "json") else {
-                completionHandler(.failure(.fileNotFound))
-                return
+                return completionHandler(.failure(.fileNotFound))
             }
             do {
-                let data = try Data(contentsOf: fileLocation)
+                let jsonData = try Data(contentsOf: fileLocation)
                 let jsonDecoder = JSONDecoder()
-                let dataFromJson = try jsonDecoder.decode([TedTalk].self, from: data)
+                let dataFromJson = try jsonDecoder.decode([TedTalk].self, from: jsonData)
                 completionHandler(.success(dataFromJson))
             } catch {
                 completionHandler(.failure(.parseError))

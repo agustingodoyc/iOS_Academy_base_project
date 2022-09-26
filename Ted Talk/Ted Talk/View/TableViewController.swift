@@ -19,22 +19,30 @@ class TableViewController: UIViewController {
     
     // MARK: - Properties
     
-    lazy var viewModel = { TableViewModel() }()
+    lazy var viewModel = TableViewModel()
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewSet()
+        setDelegates()
+        viewModel.updateData()
+    }
+    
+    func viewSet() {
         animationView.isHidden = false
         tableView.isHidden = true
         picker.isHidden = true
         searchBar.isHidden = true
         lottieAnimation()
+    }
+    
+    func setDelegates() {
         picker.dataSource = self
         picker.delegate = self
         searchBar.delegate = self
         viewModel.delegate = self
-        viewModel.updateData()
     }
 }
 
@@ -106,11 +114,13 @@ extension TableViewController {
 
 extension TableViewController: ViewModelDelegate {
     func loadData() {
-        self.animationView.stop()
-        self.animationView.isHidden = true
-        self.tableView.isHidden = false
-        self.searchBar.isHidden = false
-        self.picker.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.animationView.stop()
+            self.animationView.isHidden = true
+            self.tableView.isHidden = false
+            self.searchBar.isHidden = false
+            self.picker.isHidden = false
+        }
     }
     
     func reloadData() {
