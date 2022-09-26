@@ -10,7 +10,7 @@ import RealmSwift
 
 class RealmDB: DataBase {
     
-    let realm: Realm
+    private let realm: Realm
     var isEmpty: Bool { return realm.isEmpty }
     
     init(){
