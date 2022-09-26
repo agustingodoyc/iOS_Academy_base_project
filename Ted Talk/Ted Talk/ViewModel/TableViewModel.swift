@@ -43,10 +43,12 @@ class TableViewModel {
     // MARK: - Methods
     
     func updateData() {
-        self.dataManager.getData() { result in
-            self.delegate?.loadData()
-            self.tedTalkData = result
-            self.filteredData = result
+        dataManager.getData() { result in
+            DispatchQueue.main.async() {
+                self.delegate?.loadData()
+                self.tedTalkData = result
+                self.filteredData = result
+            }
         }
     }
 }

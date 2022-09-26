@@ -27,9 +27,7 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
         viewSet()
         setDelegates()
-        DispatchQueue.main.async() {
-            self.viewModel.updateData()
-        }
+        viewModel.updateData()
     }
     
     func viewSet() {
